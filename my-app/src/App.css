@@ -1,0 +1,59 @@
+#delBtn {
+  background: white;
+  border: white;
+  display: flex;
+}
+.subRoot{
+  display: flex;
+  justify-content: center;
+}
+.App {
+  width: 369px;
+  height: auto;
+  text-align: center;
+  align-items: center;
+  border: solid;
+  border-color: lightgray;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+  list-style: none;
+  font-family: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.listToDo {
+  width: 369px;
+  height: auto;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+p {
+  width: 170px;
+  margin: 0;
+}
+.Filter,
+.Del {
+  margin-left: 4px;
+  margin-top: -30px;
+}
+.todoItemtrue:hover {
+  text-decoration: line-through;
+}
+#hrId {
+  width: 369px;
+  margin-left: -43px;
+}
+h3 {
+  color: #af2f2f26;
+  width: 100%;
+  font-size: 100px;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  font-family: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+.ToDoFilter{
+  margin-bottom: 6px;
+}
