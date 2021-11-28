@@ -1,8 +1,10 @@
 import React from "react";
 
-export const ToDoFilters = ({ setFilter, setTodos }) => {
+export const ToDoFilters = ({ setFilter, setTodos, todos}) => {
+  let count = todos.length;
   return (
     <div className="ToDoFilter">
+      <p id="itemCount">{`Items: ${count}`}</p>
       <button onClick={() => setFilter("all")} className="Filter" id="all">
         All
       </button>

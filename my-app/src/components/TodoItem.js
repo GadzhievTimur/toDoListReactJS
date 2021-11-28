@@ -1,5 +1,5 @@
 import React from "react";
-import "/home/user/practice/my-app/src/App.css";
+import "D:\\todoshe4ka\\rep\\toDoListReactJS\\my-app\\src\\App.css";
 
 export const TodoItem = ({ todo, todos, setTodos }) => {
   const delToDo = (id) => {
@@ -23,7 +23,8 @@ export const TodoItem = ({ todo, todos, setTodos }) => {
           checked={todo.isDone}
           onChange={() => markToDo(todo.id)}
         />
-        <p>{todo.text}</p>
+        <p id={`todoTextFor${todo.isDone}`}>{todo.text}</p>
+        {/* eslint-disable-next-line */}
         <button onClick={() => delToDo(todo.id)} id="delBtn">
           ❌
         </button>
