@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { AddTodoTab } from "./components/AddTodo";
 import { ListToDo } from "./components/ListToDo";
@@ -11,16 +11,16 @@ function App() {
   ]);
 
   return (
-   <div className="subRoot">
-    <div className="App">
-      <AddTodoTab todos={toDoList} setTodos={setToDoList} />
-      <ListToDo filter={filter} todos={toDoList} setTodos={setToDoList} />
-      <ToDoFilters
-        todos={toDoList}
-        setTodos={setToDoList}
-        setFilter={setFilter}
-      />
-    </div>
+    <div className="subRoot">
+      <div className="App">
+        <AddTodoTab todos={toDoList} setTodos={setToDoList} />
+        <ListToDo filter={filter} todos={toDoList} setTodos={setToDoList} />
+        <ToDoFilters
+          todos={toDoList}
+          setTodos={setToDoList}
+          setFilter={setFilter}
+        />
+      </div>
     </div>
   );
 }

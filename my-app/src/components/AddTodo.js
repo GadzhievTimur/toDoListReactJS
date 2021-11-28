@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "/home/user/practice/my-app/src/App.css";
+import "D:\\todoshe4ka\\rep\\toDoListReactJS\\my-app\\src\\App.css";
 
-export const AddTodoTab = ({ todos, setTodos }) => {
+export const AddTodoTab = ({ todos, setTodos, event }) => {
   const [tempVal, setTempVal] = useState("");
   const addTodo = () => {
     if (tempVal.trim()) {
@@ -10,18 +10,23 @@ export const AddTodoTab = ({ todos, setTodos }) => {
     } else {
       return alert("Type something! ");
     }
+  }
+  const addTodoEnter = (event) => {
+    if(event.keyCode === 13){
+      addTodo();
+    }
   };
   return (
     <div className="mainChange">
-      <h3>todos</h3>
+      <h1>todos</h1>
       <input
         id="inputText"
         placeholder="What needs to be done?"
         onChange={(e) => setTempVal(e.target.value)}
+        onKeyDown={addTodoEnter}
         value={tempVal}
       />
-
-      <button onClick={addTodo}>Add</button>
+      <hr id="firstHr" />
     </div>
   );
 };
