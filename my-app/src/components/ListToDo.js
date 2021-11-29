@@ -1,22 +1,39 @@
 import React from "react";
 import { TodoItem } from "./TodoItem";
 
-export const ListToDo = ({ todos, setTodos, filter }) => {
+export const ListToDo = ({
+  todos,
+  setTodos,
+  filter,
+  delOneToDo,
+  removeAll,
+  check,
+  rename,
+}) => {
   const getTodos = (currentFilter) => {
     switch (currentFilter) {
       default:
         return todos;
       case "done":
-        return todos.filter((todo) => todo.isDone);
+        return todos.filter((todo) => todo.complete);
       case "inProcess":
-        return todos.filter((todo) => !todo.isDone);
+        return todos.filter((todo) => !todo.complete);
     }
   };
 
   return (
     <ul className="ListToDo">
       {getTodos(filter).map((todo) => (
-        <TodoItem todo={todo} todos={todos} key={todo.id} setTodos={setTodos} />
+        <TodoItem
+          removeAll={removeAll}
+          delOneToDo={delOneToDo}
+          todo={todo}
+          todos={todos}
+          key={todo.id}
+          setTodos={setTodos}
+          check={check}
+          rename={rename}
+        />
       ))}
     </ul>
   );
