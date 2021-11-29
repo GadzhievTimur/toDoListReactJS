@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "D:\\todoshe4ka\\rep\\toDoListReactJS\\my-app\\src\\App.css";
+import "/home/user/toDoListReact/toDoListReactJS/my-app/src/App.css";
 
 export const AddTodoTab = ({ todos, setTodos, event }) => {
   const [tempVal, setTempVal] = useState("");
