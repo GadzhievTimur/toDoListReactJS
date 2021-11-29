@@ -1,13 +1,8 @@
-#delBtn {
+.delBtn {
   background: white;
   border: white;
   display: flex;
-  margin-left: 220px;
-  opacity: 0;
-  /* width: 33px; */
-}
 
-#delBtn:hover{
   opacity: 100;
 }
 
@@ -26,8 +21,11 @@
 li {
   display: flex;
   align-items: center;
-  margin-left: -28px;
   list-style: none;
+}
+
+li:hover button {
+  opacity: 100;
 }
 
 .listToDo {
@@ -36,12 +34,12 @@ li {
   font-family: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-#todoTextForfalse,
-#todoTextFortrue {
+.todoTextForfalse,
+.todoTextFortrue {
   width: 160px;
 }
 
-.Filter,
+.filter,
 .Del {
   margin-left: 38px;
   background-color: white;
@@ -54,16 +52,16 @@ li {
   background: red;
 }
 
-.Del:active{
+.Del:active {
   background: springgreen;
 }
 
-#todoTextFortrue {
+.todoTextFortrue {
   text-decoration: line-through;
   color: lightgray;
 }
 
-#hrId {
+.hrId {
   width: 448px;
   margin-left: -40px;
   margin-bottom: -3px;
@@ -88,7 +86,7 @@ h1 {
   width: 450px;
 }
 
-#inputText {
+.inputText {
   padding: 16px 16px 16px;
   padding-right: 198px;
   width: 236px;
@@ -100,7 +98,7 @@ h1 {
   font-style: italic;
 }
 
-#firstHr {
+.firstHr {
   margin-top: -1px;
   margin-bottom: -7px;
 }
@@ -117,59 +115,49 @@ ul {
   margin-top: 5px;
 }
 
-#all:hover{
+#all:hover {
   background: blue;
   border-radius: 4px;
 }
-#all:focus{
-  border: 1px solid gray;
+#all:focus {
   background: springgreen;
   border-radius: 4px;
 }
 
-#all:active{
-  border: 1px solid gray;
+#all:active {
   border-radius: 4px;
   background: springgreen;
 }
 
-
-
-#done:hover{
+#done:hover {
   background: blue;
   border-radius: 7px;
 }
-#done:focus{
-  border: 1px solid gray;
+#done:focus {
   background: springgreen;
   border-radius: 7px;
 }
 
-#done:active{
-  border: 1px solid gray;
+#done:active {
   border-radius: 7px;
   background: springgreen;
 }
 
-
-#inProcess:hover{
+#inProcess:hover {
   background: blue;
   border-radius: 7px;
 }
-#inProcess:focus{
-  border: 1px solid gray;
+#inProcess:focus {
   background: springgreen;
   border-radius: 7px;
 }
 
-#inProcess:active{
-  border: 1px solid gray;
+#inProcess:active {
   border-radius: 7px;
   background: springgreen;
 }
 
-
-#itemCount{
+.itemCount {
   color: lightgray;
   margin-left: 3px;
 }

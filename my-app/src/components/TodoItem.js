@@ -1,35 +1,49 @@
-import React from "react";
-import "D:\\todoshe4ka\\rep\\toDoListReactJS\\my-app\\src\\App.css";
+import React, { useState } from "react";
+import "/home/user/toDoListReact/toDoListReactJS/my-app/src/App.css";
 
-export const TodoItem = ({ todo, todos, setTodos }) => {
-  const delToDo = (id) => {
-    setTodos(() => todos.filter((todo) => todo.id !== id));
+export const TodoItem = ({ todo, delOneToDo, check, rename }) => {
+  const [isEdit, setIsEdit] = useState(false);
+  const handleEditToDo = (id, text) => {
+    if (text.trim()) {
+      rename(id, text);
+    } else alert("empty field!");
   };
-
-  const markToDo = (id) => {
-    setTodos(() =>
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-      )
-    );
+  const editToDoEnter = (event, id) => {
+    if (event.keyCode === 13) {
+      handleEditToDo(id, event.target.value);
+      setIsEdit(false);
+    }
   };
-
   return (
     <>
-      <li className={`todoItem${todo.isDone}`}>
+      <li className={`todoItem${todo.complete}`}>
         <input
           type="checkbox"
           className="checkbox"
-          checked={todo.isDone}
-          onChange={() => markToDo(todo.id)}
+          checked={todo.complete}
+          onChange={() => check(todo.id, todo.complete)}
         />
-        <p id={`todoTextFor${todo.isDone}`}>{todo.text}</p>
+        {isEdit ? (
+          <input
+            placeholder={todo.title}
+            onKeyDown={(event) => editToDoEnter(event, todo.id)}
+            onSubmit={(e) => handleEditToDo(todo.id, e.target.value)}
+          />
+        ) : (
+          <p
+            onDoubleClick={() => setIsEdit(true)}
+            className={`todoTextFor${todo.complete}`}
+          >
+            {todo.title}
+          </p>
+        )}
+
         {/* eslint-disable-next-line */}
-        <button onClick={() => delToDo(todo.id)} id="delBtn">
+        <button onClick={() => delOneToDo(todo.id)} className="delBtn">
           ❌
         </button>
       </li>
-      <hr id="hrId"/>
+      <hr className="hrId" />
     </>
   );
 };

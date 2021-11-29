@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export const ToDoFilters = ({ setFilter, setTodos, todos}) => {
-  let count = todos.length;
+export const ToDoFilters = ({ setFilter, todos, remove }) => {
+  const [count, setCount] = useState();
+
+  useEffect(() => {
+    setCount(todos.filter((todo) => todo.complete === false).length);
+  }, [todos]);
+
   return (
     <div className="ToDoFilter">
-      <p id="itemCount">{`Items: ${count}`}</p>
-      <button onClick={() => setFilter("all")} className="Filter" id="all">
+      <p className="itemCount">Items: {count}</p>
+      <button onClick={() => setFilter("all")} className="filter" id="all">
         All
       </button>
-      <button onClick={() => setFilter("done")} className="Filter" id="done">
+      <button onClick={() => setFilter("done")} className="filter" id="done">
         Done
       </button>
       <button
         onClick={() => setFilter("inProcess")}
-        className="Filter"
+        className="filter"
         id="inProcess"
       >
         In process
       </button>
-      <button onClick={() => setTodos([])} className="Del">
+      <button onClick={() => remove()} className="Del">
         Clear all
       </button>
     </div>
