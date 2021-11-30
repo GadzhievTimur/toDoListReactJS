@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export const ToDoFilters = ({ setFilter, todos, remove }) => {
-  const [count, setCount] = useState();
-
-  useEffect(() => {
-    setCount(todos.filter((todo) => todo.complete === false).length);
-  }, [todos]);
-
+export const ToDoFilters = ({ setFilter, activeTodoLen, remove }) => {
   return (
     <div className="ToDoFilter">
-      <p className="itemCount">Items: {count}</p>
+      <p className="itemCount">Items: {activeTodoLen}</p>
       <button onClick={() => setFilter("all")} className="filter" id="all">
         All
       </button>
@@ -23,8 +17,8 @@ export const ToDoFilters = ({ setFilter, todos, remove }) => {
       >
         In process
       </button>
-      <button onClick={() => remove()} className="Del">
-        Clear all
+      <button onClick={() => remove()} className="Del filter">
+        Clear completed
       </button>
     </div>
   );

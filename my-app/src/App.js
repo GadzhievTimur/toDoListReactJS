@@ -10,22 +10,21 @@ function App() {
   const [filter, setFilter] = useState("all");
   const [toDoList, setToDoList] = useState([]);
 
-  const fetchTodos = async () => {
+  const getTodos = async () => {
     const response = await fetch(api);
     const data = await response.json();
     setToDoList(data);
   };
-
-  const fetchOptions = (route, method, body) => {
+  const fetchOptions = async (route, method, body) => {
     return fetch(api + route, {
       method: method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
-    }).then(fetchTodos);
+    }).then(getTodos);
   };
 
   useEffect(() => {
-    fetchTodos();
+    getTodos();
   }, []);
 
   const postNewToDo = async (title) => {
@@ -39,27 +38,29 @@ function App() {
     fetchOptions("/", "DELETE");
   };
 
-  const check = async (id, complete) => {
+  const checkToDo = async (id, complete) => {
     fetchOptions(`/${id}`, "PUT", { complete: !complete });
   };
-  const rename = async (id, title) => {
+  const renameToDo = async (id, title) => {
     fetchOptions(`/${id}`, "PUT", { title: title });
   };
+
   return (
     <div className="subRoot">
       <div className="App">
         <AddTodoTab todos={toDoList} addTodo={postNewToDo} />
         <ListToDo
-          rename={rename}
+          renameToDo={renameToDo}
           delOneToDo={delOneToDo}
           filter={filter}
-          check={check}
+          checkToDo={checkToDo}
           todos={toDoList}
-          setTodos={setToDoList}
         />
         <ToDoFilters
           remove={removeAll}
-          todos={toDoList}
+          activeTodoLen={
+            toDoList.filter((todo) => todo.complete === false).length
+          }
           setTodos={setToDoList}
           setFilter={setFilter}
         />
