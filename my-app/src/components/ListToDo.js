@@ -7,8 +7,8 @@ export const ListToDo = ({
   filter,
   delOneToDo,
   removeAll,
-  check,
-  rename,
+  checkToDo,
+  renameToDo,
 }) => {
   const getTodos = (currentFilter) => {
     switch (currentFilter) {
@@ -31,8 +31,8 @@ export const ListToDo = ({
           todos={todos}
           key={todo.id}
           setTodos={setTodos}
-          check={check}
-          rename={rename}
+          checkToDo={checkToDo}
+          renameToDo={renameToDo}
         />
       ))}
     </ul>

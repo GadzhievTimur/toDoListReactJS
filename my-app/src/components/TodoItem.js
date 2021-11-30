@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import "/home/user/toDoListReact/toDoListReactJS/my-app/src/App.css";
 
-export const TodoItem = ({ todo, delOneToDo, check, rename }) => {
+export const TodoItem = ({ todo, delOneToDo, checkToDo, renameToDo }) => {
   const [isEdit, setIsEdit] = useState(false);
-  const handleEditToDo = (id, text) => {
-    if (text.trim()) {
-      rename(id, text);
-    } else alert("empty field!");
-  };
-  const editToDoEnter = (event, id) => {
+  const handleEditToDo = (event, id) => {
     if (event.keyCode === 13) {
-      handleEditToDo(id, event.target.value);
-      setIsEdit(false);
+      if (event.target.value.trim()) {
+        renameToDo(id, event.target.value);
+        setIsEdit(false);
+      } else {
+        alert("empty field!");
+      }
     }
   };
+
   return (
     <>
       <li className={`todoItem${todo.complete}`}>
@@ -21,13 +20,13 @@ export const TodoItem = ({ todo, delOneToDo, check, rename }) => {
           type="checkbox"
           className="checkbox"
           checked={todo.complete}
-          onChange={() => check(todo.id, todo.complete)}
+          onChange={() => checkToDo(todo.id, todo.complete)}
         />
         {isEdit ? (
           <input
             placeholder={todo.title}
-            onKeyDown={(event) => editToDoEnter(event, todo.id)}
-            onSubmit={(e) => handleEditToDo(todo.id, e.target.value)}
+            onKeyDown={(event) => handleEditToDo(event, todo.id)}
+            className="newTodoInp"
           />
         ) : (
           <p
@@ -43,7 +42,6 @@ export const TodoItem = ({ todo, delOneToDo, check, rename }) => {
           ❌
         </button>
       </li>
-      <hr className="hrId" />
     </>
   );
 };

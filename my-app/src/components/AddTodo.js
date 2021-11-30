@@ -26,7 +26,6 @@ export const AddTodoTab = ({ addTodo }) => {
         onKeyDown={addTodoEnter}
         value={tempVal}
       />
-      <hr className="firstHr" />
     </div>
   );
 };

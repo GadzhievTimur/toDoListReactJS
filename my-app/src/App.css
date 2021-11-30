@@ -1,59 +1,168 @@
-.delBtn {
-  background: white;
-  border: white;
-  display: flex;
-
-  opacity: 100;
+.App {
+  width: 600px;
+  height: auto;
+  align-items: center;
+  border: 1px solid lightgray;
 }
-
 .subRoot {
   display: flex;
   justify-content: center;
 }
 
-.App {
-  width: 369px;
-  height: auto;
-  text-align: center;
-  align-items: center;
+ul {
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
 }
 
 li {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
+}
+
+.delBtn {
+  background: rgba(255, 255, 255, 0);
+  border: white;
+  display: flex;
+  opacity: 0;
 }
 
 li:hover button {
   opacity: 100;
 }
 
-.listToDo {
-  width: 369px;
-  height: auto;
-  font-family: 14px "Helvetica Neue", Arial, Helvetica, sans-serif;
+.inputText {
+  margin-bottom: -1px;
+  padding: 16px 16px 16px;
+  padding-right: 198px;
+  width: 384px;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  border: 1px solid lightgray !important;
+  border-top: 2px solid lightgray !important;
+  border-bottom: 2px solid lightgray !important;
+  font-style: italic;
 }
 
-.todoTextForfalse,
-.todoTextFortrue {
-  width: 160px;
+.ListToDo {
+  margin: 0;
+  padding: 0;
 }
 
-.filter,
-.Del {
-  margin-left: 38px;
+.ListToDo > li {
+  display: flex;
+  width: 599px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+}
+
+.ToDoFilter {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid lightgray;
+  width: 598px;
+}
+
+.filter {
+  padding: 5px 10px;
+  border-radius: 7px;
   background-color: white;
-  border: none;
+  border: 5px solid transparent;
   margin-top: 6px;
   margin-bottom: 3px;
 }
 
 .Del:hover {
-  background: red;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: rgb(255, 0, 0);
 }
 
 .Del:active {
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: white;
+  background: rgba(255, 0, 0, 0.425);
+}
+
+.itemCount {
+  color: lightgray;
+}
+
+#all:hover {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: lightgray;
+  border-radius: 4px;
+}
+#all:focus {
+  padding: 5px 10px;
+  border-radius: 7px;
   background: springgreen;
+  border-radius: 4px;
+}
+
+#all:active {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border-radius: 4px;
+  background: springgreen;
+}
+
+#done:hover {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: lightgray;
+  border-radius: 7px;
+}
+#done:focus {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: springgreen;
+  border-radius: 7px;
+}
+
+#done:active {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border-radius: 7px;
+  background: springgreen;
+}
+
+#inProcess:hover {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: lightgray;
+  border-radius: 7px;
+}
+#inProcess:focus {
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: springgreen;
+  border-radius: 7px;
+}
+
+#inProcess:active {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border-radius: 7px;
+  background: springgreen;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: -7px;
+  width: 100%;
+  font-size: 100px;
+  font-weight: 480;
+  color: rgba(175, 47, 47, 0.15);
 }
 
 .todoTextFortrue {
@@ -61,103 +170,14 @@ li:hover button {
   color: lightgray;
 }
 
-.hrId {
-  width: 448px;
-  margin-left: -40px;
-  margin-bottom: -3px;
-}
-
-h1 {
-  display: flex;
-  margin-left: 110px;
-  margin-top: -20px;
-  margin-bottom: -7px;
+.newTodoInp {
+  text-align: center;
+  margin-bottom: -1px;
+  padding: 16px;
   width: 100%;
-  font-size: 100px;
-  font-weight: 480;
-  color: rgba(175, 47, 47, 0.15);
-  font-family: 100px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.ToDoFilter {
-  display: flex;
-  border: 1px solid lightgray;
-  margin-top: -17px;
-  width: 450px;
-}
-
-.inputText {
-  padding: 16px 16px 16px;
-  padding-right: 198px;
-  width: 236px;
-  border: none;
   outline: none;
+  letter-spacing: 1px;
   background: rgba(0, 0, 0, 0.003);
-  box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
-  border: 1px solid lightgray !important;
+  border: none;
   font-style: italic;
-}
-
-.firstHr {
-  margin-top: -1px;
-  margin-bottom: -7px;
-}
-
-hr {
-  opacity: 20%;
-}
-
-.ListToDo {
-  width: 410px;
-  border: 0.5px solid lightgray !important;
-}
-ul {
-  margin-top: 5px;
-}
-
-#all:hover {
-  background: blue;
-  border-radius: 4px;
-}
-#all:focus {
-  background: springgreen;
-  border-radius: 4px;
-}
-
-#all:active {
-  border-radius: 4px;
-  background: springgreen;
-}
-
-#done:hover {
-  background: blue;
-  border-radius: 7px;
-}
-#done:focus {
-  background: springgreen;
-  border-radius: 7px;
-}
-
-#done:active {
-  border-radius: 7px;
-  background: springgreen;
-}
-
-#inProcess:hover {
-  background: blue;
-  border-radius: 7px;
-}
-#inProcess:focus {
-  background: springgreen;
-  border-radius: 7px;
-}
-
-#inProcess:active {
-  border-radius: 7px;
-  background: springgreen;
-}
-
-.itemCount {
-  color: lightgray;
-  margin-left: 3px;
 }
