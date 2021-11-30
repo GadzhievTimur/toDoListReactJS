@@ -8,7 +8,7 @@ export const TodoItem = ({ todo, delOneToDo, checkToDo, renameToDo }) => {
         renameToDo(id, event.target.value);
         setIsEdit(false);
       } else {
-        setIsEdit(event.target.value);
+        setIsEdit(false);
       }
     }
   };
@@ -24,6 +24,7 @@ export const TodoItem = ({ todo, delOneToDo, checkToDo, renameToDo }) => {
         />
         {isEdit ? (
           <input
+            autoFocus
             placeholder={todo.title}
             onKeyDown={(event) => handleEditToDo(event, todo.id)}
             className="newTodoInp"

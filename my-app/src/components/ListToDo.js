@@ -5,7 +5,6 @@ export const ListToDo = ({
   todos,
   filter,
   delOneToDo,
-  removeAll,
   checkToDo,
   renameToDo,
 }) => {
@@ -24,10 +23,8 @@ export const ListToDo = ({
     <ul className="ListToDo">
       {getTodos(filter).map((todo) => (
         <TodoItem
-          removeAll={removeAll}
           delOneToDo={delOneToDo}
           todo={todo}
-          // todos={todos}
           key={todo.id}
           checkToDo={checkToDo}
           renameToDo={renameToDo}
