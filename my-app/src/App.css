@@ -2,7 +2,6 @@
   width: 600px;
   height: auto;
   align-items: center;
-  border: 1px solid lightgray;
 }
 .subRoot {
   display: flex;
@@ -41,8 +40,8 @@ li:hover button {
   background: rgba(0, 0, 0, 0.003);
   box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
   border: 1px solid lightgray !important;
-  border-top: 2px solid lightgray !important;
-  border-bottom: 2px solid lightgray !important;
+  border-top: 1px solid lightgray !important;
+  border-bottom: 1px solid lightgray !important;
   font-style: italic;
 }
 
@@ -161,7 +160,7 @@ h1 {
   margin-bottom: -7px;
   width: 100%;
   font-size: 100px;
-  font-weight: 480;
+  font-weight: 400;
   color: rgba(175, 47, 47, 0.15);
 }
 

@@ -3,7 +3,6 @@ import { TodoItem } from "./TodoItem";
 
 export const ListToDo = ({
   todos,
-  setTodos,
   filter,
   delOneToDo,
   removeAll,
@@ -28,9 +27,8 @@ export const ListToDo = ({
           removeAll={removeAll}
           delOneToDo={delOneToDo}
           todo={todo}
-          todos={todos}
+          // todos={todos}
           key={todo.id}
-          setTodos={setTodos}
           checkToDo={checkToDo}
           renameToDo={renameToDo}
         />

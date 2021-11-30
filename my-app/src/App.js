@@ -61,7 +61,6 @@ function App() {
           activeTodoLen={
             toDoList.filter((todo) => todo.complete === false).length
           }
-          setTodos={setToDoList}
           setFilter={setFilter}
         />
       </div>

@@ -8,7 +8,7 @@ export const TodoItem = ({ todo, delOneToDo, checkToDo, renameToDo }) => {
         renameToDo(id, event.target.value);
         setIsEdit(false);
       } else {
-        alert("empty field!");
+        setIsEdit(event.target.value);
       }
     }
   };
